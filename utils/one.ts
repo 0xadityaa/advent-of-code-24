@@ -1,14 +1,11 @@
 import { readFileSync } from "fs";
 
-// Synchronous input processing for Bun
 export function processInput(filePath: string): {
   leftList: number[];
   rightList: number[];
 } {
-  // Read file synchronously using readFileSync
   const content = readFileSync(filePath, "utf-8");
 
-  // Split and map in a single pass
   const pairs = content
     .trim()
     .split("\n")

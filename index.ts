@@ -1,5 +1,6 @@
 import { processInput } from "./utils/one.ts";
 import { calculateListDistance } from "./solutions/one.ts";
+import { processReports } from "./solutions/two.ts";
 
 function main() {
 // Solution ONE
@@ -12,6 +13,12 @@ function main() {
   }
 
 // Solution TWO  
+  try {
+    const safeReportCount = processReports("./inputs/two.txt");
+    console.log("Number of Safe Reports:", safeReportCount);
+  } catch (error) {
+    console.error("Error processing reports:", error);
+  }
 }
 
 main();
