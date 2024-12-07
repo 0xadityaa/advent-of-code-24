@@ -3,7 +3,8 @@ import { calculateListDistance } from "./solutions/one.ts";
 import { processReports } from "./solutions/two-1.ts";
 import { processSafeReports } from "./solutions/two-2.ts";
 import { readFileSync } from "fs";
-import { parseCorruptedMemory } from "./solutions/three.ts";
+import { parseCorruptedMemory } from "./solutions/three-1.ts";
+import { parseCorruptedMemoryWithInstructions } from "./solutions/three-2.ts";
 
 function main() {
   // Solution ONE
@@ -44,7 +45,14 @@ function main() {
     console.error("Error processing memory:", error);
   }
 //   Solution THREE 2
-
+  try {
+    console.info("\n---> SOLUTION 3 PT-2:\n");
+    const input = readFileSync("./inputs/three.txt", "utf-8").trim();
+    const result = parseCorruptedMemoryWithInstructions(input);
+    console.log(`Total Multiplication Sum: ${result}`);
+  } catch (error) {
+    console.error("Error processing memory:", error);
+  }
 }
 
 main();
