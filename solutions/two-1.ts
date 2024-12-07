@@ -56,11 +56,7 @@ export function processReports(filePath: string): number {
     .split("\n")
     .map((line) => line.trim().split(/\s+/).map(Number));
 
-  console.log("Parsed Reports:", reports);
-
   const safeReports = reports.filter(isReportSafe);
-
-  console.log("Safe Reports:", safeReports);
 
   return safeReports.length;
 }
