@@ -2,6 +2,8 @@ import { processInput } from "./utils/one.ts";
 import { calculateListDistance } from "./solutions/one.ts";
 import { processReports } from "./solutions/two-1.ts";
 import { processSafeReports } from "./solutions/two-2.ts";
+import { readFileSync } from "fs";
+import { parseCorruptedMemory } from "./solutions/three.ts";
 
 function main() {
   // Solution ONE
@@ -33,6 +35,16 @@ function main() {
   }
 
 //   Solution THREE
+  try {
+    console.info("\n---> SOLUTION 3 PT-1:\n");
+    const input = readFileSync("./inputs/three.txt", "utf-8").trim();
+    const result = parseCorruptedMemory(input);
+    console.log("Total Multiplication Sum:", result);
+  } catch (error) {
+    console.error("Error processing memory:", error);
+  }
+//   Solution THREE 2
+
 }
 
 main();

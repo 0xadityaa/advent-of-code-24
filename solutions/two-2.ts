@@ -20,8 +20,6 @@
 // The `isReportSafe` function extends this check by allowing the removal of one number from the report.
 // If removing one number results in a strictly safe report, then the original report is considered safe.
 
-// Your job is to use these functions to count how many reports in the input meet these safety criteria.
-
 import { readFileSync } from "fs";
 import { isReportSafe } from "../utils/two-2";
 
